@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import AllTrainsPage from "./pages/AllTrainsPage";
+import SingleTrainPage from "./pages/SingleTrainPage";
 
-function App() {
+// Dummy train data
+const dummyTrains = [
+  {
+    trainName: "Chennai Exp",
+    trainNumber: "2344",
+    departureTime: { Hours: 21, Minutes: 35, Seconds: 0 },
+    seatsAvailable: { sleeper: 3, AC: 1 },
+    price: { sleeper: 2, AC: 5 },
+    delayedBy: 15,
+  },
+  {
+    trainName: "Hyderabad Exp",
+    trainNumber: "2341",
+    departureTime: { Hours: 23, Minutes: 55, Seconds: 0 },
+    seatsAvailable: { sleeper: 6, AC: 7 },
+    price: { sleeper: 554, AC: 1854 },
+    delayedBy: 5,
+  },
+  // Add more dummy trains here...
+];
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<AllTrainsPage trains={dummyTrains} />} />
+        <Route
+          path="/train/:trainNumber"
+          element={<SingleTrainPage trains={dummyTrains} />}
+        />
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
