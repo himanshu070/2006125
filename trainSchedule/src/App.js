@@ -6,16 +6,16 @@ import SingleTrainPage from "./pages/SingleTrainPage";
 // Dummy train data
 const dummyTrains = [
   {
-    trainName: "Chennai Exp",
-    trainNumber: "2344",
+    trainName: "Dummy Exp",
+    trainNumber: "2314",
     departureTime: { Hours: 21, Minutes: 35, Seconds: 0 },
     seatsAvailable: { sleeper: 3, AC: 1 },
     price: { sleeper: 2, AC: 5 },
     delayedBy: 15,
   },
   {
-    trainName: "Hyderabad Exp",
-    trainNumber: "2341",
+    trainName: "Mumbai Exp",
+    trainNumber: "2311",
     departureTime: { Hours: 23, Minutes: 55, Seconds: 0 },
     seatsAvailable: { sleeper: 6, AC: 7 },
     price: { sleeper: 554, AC: 1854 },
